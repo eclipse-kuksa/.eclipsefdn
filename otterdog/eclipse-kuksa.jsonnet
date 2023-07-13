@@ -11,20 +11,27 @@ orgs.newOrg('eclipse-kuksa') {
     web_commit_signoff_required: false,
   },
   _repositories+:: [
+    orgs.extendRepo('.eclipsefdn') {
+      dependabot_security_updates_enabled: true,
+    },
     orgs.newRepo('kuksa-actions') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
     orgs.newRepo('kuksa-databroker') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
     orgs.newRepo('kuksa-viss') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
     orgs.newRepo('kuksa-website') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
   ],
