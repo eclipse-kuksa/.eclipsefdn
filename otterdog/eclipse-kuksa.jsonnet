@@ -11,9 +11,6 @@ orgs.newOrg('eclipse-kuksa') {
     web_commit_signoff_required: false,
   },
   _repositories+:: [
-    orgs.extendRepo('.eclipsefdn') {
-      dependabot_security_updates_enabled: true,
-    },
     orgs.newRepo('kuksa-actions') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
