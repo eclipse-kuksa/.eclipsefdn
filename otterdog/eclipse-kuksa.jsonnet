@@ -34,8 +34,6 @@ orgs.newOrg('eclipse-kuksa') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "website",
       gh_pages_source_path: "/",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
