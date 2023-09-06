@@ -16,6 +16,11 @@ orgs.newOrg('eclipse-kuksa') {
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('kuksa-android-sdk') {
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('kuksa-databroker') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
