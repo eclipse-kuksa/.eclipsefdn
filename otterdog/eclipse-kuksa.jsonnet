@@ -23,6 +23,16 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_linear_history: true,
+          requires_status_checks: true,
+          dismisses_stale_reviews : true,
+          requires_strict_status_checks: true,
+          require_last_push_approval: true,
+        },
+      ],
     },
     orgs.newRepo('kuksa-databroker') {
       allow_update_branch: false,
