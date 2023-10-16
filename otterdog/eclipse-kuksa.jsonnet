@@ -23,8 +23,10 @@ orgs.newOrg('eclipse-kuksa') {
     },
     orgs.newRepo('kuksa-android-sdk') {
       allow_merge_commit: true,
+      allow_rebase_merge: false,
+      allow_squash_merge: false,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
       branch_protection_rules: [
@@ -32,7 +34,7 @@ orgs.newOrg('eclipse-kuksa') {
           dismisses_stale_reviews: true,
           require_last_push_approval: true,
           required_approving_review_count: 1,
-          requires_linear_history: true,
+          requires_linear_history: false,
           requires_strict_status_checks: true,
         },
       ],
