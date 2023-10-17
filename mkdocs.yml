@@ -1,6 +1,6 @@
 site_name: Otterdog configuration @ eclipse-kuksa
 site_description: Otterdog configuration @ eclipse-kuksa
-strict: true
+strict: false
 
 site_url: https://eclipse-kuksa.github.io/.eclipsefdn/
 
