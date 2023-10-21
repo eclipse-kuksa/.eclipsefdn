@@ -4,6 +4,9 @@ strict: false
 
 site_url: https://eclipse-kuksa.github.io/.eclipsefdn/
 
+repo_name: eclipse-kuksa/.eclipsefdn
+repo_url: https://github.com/eclipse-kuksa/.eclipsefdn/
+
 docs_dir: ./docs
 site_dir: ./_site
 
