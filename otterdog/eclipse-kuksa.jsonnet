@@ -120,5 +120,26 @@ orgs.newOrg('eclipse-kuksa') {
         },
       ],
     },
+    orgs.newRepo('kuksa-common') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('kuksa-python-sdk') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('kuksa-android-companion') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      web_commit_signoff_required: false,
+    },
   ],
 }
