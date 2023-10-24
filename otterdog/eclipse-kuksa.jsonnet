@@ -1,5 +1,20 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+# Default branch protection rule for KUKSA repositories
+# As a general rule all repos shall have branch protection for main but not necessarily from start.
+# It may for example be relevant to not have branch protection during the migration phase from old
+# eclipse/kuksa.* repos to repos in this orga, to be able to "redo" the migration if needed
+# Repositories may use other branch protection rules if considered needed
+
+local kuksa_default_branch_protection_rule(pattern) =
+  orgs.newBranchProtectionRule(pattern) {
+        dismisses_stale_reviews: true,
+        require_last_push_approval: true,
+        required_approving_review_count: 1,
+        requires_strict_status_checks: true,
+  };
+
+
 orgs.newOrg('eclipse-kuksa') {
   settings+: {
     description: "",
@@ -22,6 +37,9 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
     orgs.newRepo('kuksa-android-sdk') {
       allow_merge_commit: true,
@@ -34,12 +52,7 @@ orgs.newOrg('eclipse-kuksa') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          require_last_push_approval: true,
-          required_approving_review_count: 1,
-          requires_strict_status_checks: true,
-        },
+        kuksa_default_branch_protection_rule('main')
       ],
     },
     orgs.newRepo('kuksa-databroker') {
@@ -64,12 +77,7 @@ orgs.newOrg('eclipse-kuksa') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-          requires_linear_history: true,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        kuksa_default_branch_protection_rule('main')
       ],
     },
     orgs.newRepo('kuksa-viss') {
@@ -78,9 +86,11 @@ orgs.newOrg('eclipse-kuksa') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
     orgs.newRepo('kuksa-website') {
       allow_merge_commit: true,
@@ -97,18 +107,7 @@ orgs.newOrg('eclipse-kuksa') {
         actions_can_approve_pull_request_reviews: false,
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-          requires_linear_history: true,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-        orgs.newBranchProtectionRule('master') {
-          required_approving_review_count: 0,
-          requires_linear_history: true,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        kuksa_default_branch_protection_rule('master')
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
