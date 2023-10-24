@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-kuksa') {
   settings+: {
-    default_repository_permission: "none",
     description: "",
     name: "Eclipse Kuksa",
     packages_containers_internal: false,
@@ -20,6 +19,9 @@ orgs.newOrg('eclipse-kuksa') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
     },
     orgs.newRepo('kuksa-android-sdk') {
       allow_merge_commit: true,
@@ -28,6 +30,9 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
@@ -43,6 +48,9 @@ orgs.newOrg('eclipse-kuksa') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
     },
     orgs.newRepo('kuksa-hardware') {
       allow_merge_commit: true,
@@ -52,6 +60,9 @@ orgs.newOrg('eclipse-kuksa') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
@@ -67,6 +78,9 @@ orgs.newOrg('eclipse-kuksa') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
     },
     orgs.newRepo('kuksa-website') {
       allow_merge_commit: true,
@@ -79,6 +93,9 @@ orgs.newOrg('eclipse-kuksa') {
       gh_pages_source_branch: "website",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
