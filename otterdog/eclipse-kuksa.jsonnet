@@ -54,6 +54,20 @@ orgs.newOrg('eclipse-kuksa') {
         kuksa_default_branch_protection_rule('main')
       ],
     },
+    orgs.newRepo('kuksa-android-companion') {
+      allow_merge_commit: true,
+      allow_rebase_merge: false,
+      allow_squash_merge: false,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
+    },
     orgs.newRepo('kuksa-databroker') {
       allow_merge_commit: true,
       allow_update_branch: false,
