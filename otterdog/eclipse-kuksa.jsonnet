@@ -20,7 +20,6 @@ orgs.newOrg('eclipse-kuksa') {
     description: "",
     name: "Eclipse Kuksa",
     packages_containers_internal: false,
-    packages_containers_public: false,
     readers_can_create_discussions: true,
     web_commit_signoff_required: false,
     workflows+: {
