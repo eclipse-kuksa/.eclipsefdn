@@ -26,6 +26,20 @@ orgs.newOrg('eclipse-kuksa') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
+      value: "pass:bots/automotive.kuksa/gpg/passphrase",
+    },
+    orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
+      value: "pass:bots/automotive.kuksa/gpg/secret-subkeys.asc",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
+      value: "pass:bots/automotive.kuksa/oss.sonatype.org/password",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
+      value: "pass:bots/automotive.kuksa/oss.sonatype.org/username",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('kuksa-actions') {
       allow_merge_commit: true,
