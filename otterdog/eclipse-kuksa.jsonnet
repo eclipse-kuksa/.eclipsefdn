@@ -33,6 +33,9 @@ orgs.newOrg('eclipse-kuksa') {
     orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
       value: "pass:bots/automotive.kuksa/gpg/secret-subkeys.asc",
     },
+    orgs.newOrgSecret('ORG_GPG_KEY_ID') {
+      value: "pass:bots/automotive.kuksa/gpg/key_id",
+    },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
       value: "pass:bots/automotive.kuksa/oss.sonatype.org/password",
     },
