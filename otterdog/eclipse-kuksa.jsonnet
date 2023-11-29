@@ -39,6 +39,21 @@ orgs.newOrg('eclipse-kuksa') {
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
       value: "pass:bots/automotive.kuksa/oss.sonatype.org/username",
     },
+    orgs.newOrgSecret('KEYSTORE_RELEASE') {
+      value: "pass:bots/automotive.kuksa/android/keystore-release",
+    },
+    orgs.newOrgSecret('KEYSTORE_DEBUG') {
+      value: "pass:bots/automotive.kuksa/android/keystore-debug",
+    },
+    orgs.newOrgSecret('SIGNING_STORE_PASSWORD') {
+      value: "pass:bots/automotive.kuksa/android/store-password",
+    },
+    orgs.newOrgSecret('SIGNING_KEY_PASSWORD') {
+      value: "pass:bots/automotive.kuksa/android/key-password",
+    },
+    orgs.newOrgSecret('SIGNING_KEY_ALIAS') {
+      value: "pass:bots/automotive.kuksa/android/alias",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('kuksa-actions') {
