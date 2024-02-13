@@ -64,6 +64,7 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "Reusable Github actions and workflows used in the Eclipse KUKSA project",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -169,6 +170,7 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "The Python SDK for Eclipse KUKSA",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -235,6 +237,7 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "An data and actuation provider for Eclipse KUKSA based on CSV files. Good for simple mocking and replaying data.",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
