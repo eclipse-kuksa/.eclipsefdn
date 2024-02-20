@@ -242,6 +242,9 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
     orgs.newRepo('kuksa-someip-provider') {
       allow_merge_commit: true,
@@ -252,6 +255,9 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
   ],
 }
