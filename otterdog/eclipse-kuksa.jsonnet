@@ -57,6 +57,9 @@ orgs.newOrg('eclipse-kuksa') {
     orgs.newOrgSecret('SIGNING_KEY_ALIAS') {
       value: "pass:bots/automotive.kuksa/android/alias",
     },
+    orgs.newOrgSecret('ECLIPSE_GITLAB_API_TOKEN') {
+      value: "pass:bots/automotive.kuksa/gitlab.eclipse.org/api-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('kuksa-actions') {
