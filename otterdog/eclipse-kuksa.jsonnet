@@ -276,6 +276,7 @@ orgs.newOrg('eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-mock-provider') {
+      description: "Python-based mock provider intended for testing",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -284,8 +285,12 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
     orgs.newRepo('kuksa-incubation') {
+      description: "Proof-of-Concepts, Demonstrators and other contributions",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -295,6 +300,9 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        kuksa_default_branch_protection_rule('main')
+      ],
     },
   ],
 }
