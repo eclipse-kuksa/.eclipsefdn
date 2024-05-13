@@ -59,6 +59,9 @@ orgs.newOrg('eclipse-kuksa') {
     orgs.newOrgSecret('ECLIPSE_GITLAB_API_TOKEN') {
       value: "pass:bots/automotive.kuksa/gitlab.eclipse.org/api-token",
     },
+    orgs.newOrgSecret('CODECOV_TOKEN') {
+      value: "pass:bots/automotive.kuksa/codecov.io/codecov-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('kuksa-actions') {
