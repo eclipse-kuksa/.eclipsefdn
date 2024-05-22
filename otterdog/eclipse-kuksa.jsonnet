@@ -110,8 +110,6 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
