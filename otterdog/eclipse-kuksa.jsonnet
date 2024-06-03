@@ -97,6 +97,16 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "A modern in-vehicle VSS (Vehicle Signal Specification) server written in RUST",
+      homepage: "https://eclipse-kuksa.github.io/kuksa-website/",
+      topics: [
+        "agl", 
+        "automotive",
+        "eclipse",
+        "eclipse-sdv",
+        "kuksa",
+        "sdv",
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
