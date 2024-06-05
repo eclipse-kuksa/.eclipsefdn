@@ -41,6 +41,12 @@ orgs.newOrg('eclipse-kuksa') {
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
       value: "pass:bots/automotive.kuksa/oss.sonatype.org/username",
     },
+    orgs.newOrgSecret('QUAY_IO_TOKEN') {
+      value: "pass:bots/automotive.kuksa/quay.io/robot-token",
+    },
+    orgs.newOrgSecret('QUAY_IO_USERNAME') {
+      value: "pass:bots/automotive.kuksa/quay.io/robot-username",
+    },
     orgs.newOrgSecret('KEYSTORE_RELEASE') {
       value: "pass:bots/automotive.kuksa/android/keystore-release",
     },
