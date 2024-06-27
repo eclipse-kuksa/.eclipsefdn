@@ -179,6 +179,7 @@ orgs.newOrg('eclipse-kuksa') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "Common files and tools for different KUKSA components",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
