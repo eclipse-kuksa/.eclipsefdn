@@ -273,6 +273,9 @@ orgs.newOrg('eclipse-kuksa') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      environments: [
+        orgs.newEnvironment('pypi'),
+      ],
       branch_protection_rules: [
         kuksa_default_branch_protection_rule('main')
       ],
