@@ -417,6 +417,7 @@ orgs.newOrg('eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-java-sdk') {
+      description: "The Java SDK for Eclipse KUKSA",
       allow_merge_commit: true,
       allow_rebase_merge: false,
       allow_squash_merge: false,
