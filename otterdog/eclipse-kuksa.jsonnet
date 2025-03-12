@@ -26,6 +26,9 @@ orgs.newOrg('eclipse-kuksa') {
     },
   },
   secrets+: [
+    orgs.newOrgSecret('CRATES_API_TOKEN') {
+     value: "pass:bots/automotive.kuksa/crates.io/api-token",
+    },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
       value: "pass:bots/automotive.kuksa/gpg/passphrase",
     },
