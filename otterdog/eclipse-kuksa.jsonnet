@@ -15,7 +15,7 @@ local kuksa_default_branch_protection_rule(pattern) =
   };
 
 
-orgs.newOrg('eclipse-kuksa') {
+orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
   settings+: {
     description: "",
     name: "Eclipse Kuksa",
