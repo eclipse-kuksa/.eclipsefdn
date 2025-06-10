@@ -38,11 +38,11 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
     orgs.newOrgSecret('ORG_GPG_KEY_ID') {
       value: "pass:bots/automotive.kuksa/gpg/subkey_id",
     },
-    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.kuksa/oss.sonatype.org/gh-token-password",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/automotive.kuksa/central.sonatype.org/token-password",
     },
-    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.kuksa/oss.sonatype.org/gh-token-username",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/automotive.kuksa/central.sonatype.org/token-username",
     },
     orgs.newOrgSecret('QUAY_IO_TOKEN') {
       value: "pass:bots/automotive.kuksa/quay.io/robot-token",
