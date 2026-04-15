@@ -215,6 +215,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
     orgs.newRepo('kuksa-viss') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
