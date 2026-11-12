@@ -9,7 +9,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 local kuksa_default_branch_protection_rule(pattern) =
   orgs.newBranchProtectionRule(pattern) {
         dismisses_stale_reviews: true,
-        require_last_push_approval: true,
+        require_last_push_approval: false,
         required_approving_review_count: 1,
         requires_strict_status_checks: true,
   };
