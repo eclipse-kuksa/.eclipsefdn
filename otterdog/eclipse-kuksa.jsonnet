@@ -86,6 +86,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
   ],
   _repositories+:: [
     orgs.newRepo('kuksa-actions') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
