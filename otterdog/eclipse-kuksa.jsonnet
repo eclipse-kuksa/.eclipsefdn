@@ -25,6 +25,18 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  code_security_configurations+: [
+    orgs.newOrgCodeSecurityConfiguration('kuksa-base-sec') {
+      description: "Secret scanning, private_vulnerability_reporting and  Dependabot for all repositories",
+      code_security: "enabled", 
+      secret_protection: "enabled",
+      dependabot_alerts: "enabled",
+      dependabot_security_updates: "enabled",
+      secret_scanning: "enabled",
+      secret_scanning_push_protection: "enabled",
+      private_vulnerability_reporting: "enabled",
+    },
+  ],
   secrets+: [
     orgs.newOrgSecret('CRATES_API_TOKEN') {
      value: "pass:bots/automotive.kuksa/crates.io/api-token",
@@ -163,6 +175,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('kuksa-android-sdk') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_rebase_merge: false,
       allow_squash_merge: false,
@@ -177,6 +190,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-databroker') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -200,6 +214,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-hardware') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -227,6 +242,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-website') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
@@ -254,6 +270,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-common') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -268,6 +285,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-python-sdk') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -285,6 +303,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-android-companion') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_rebase_merge: false,
       allow_squash_merge: false,
@@ -299,6 +318,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-can-provider') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -312,6 +332,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-dds-provider') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -325,6 +346,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-gps-provider') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -338,6 +360,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-csv-provider') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -352,6 +375,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-someip-provider') {
+      code_security_configuration: "kuksa-base-sec",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -378,6 +402,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-mock-provider') {
+      code_security_configuration: "kuksa-base-sec",
       description: "Python-based mock provider intended for testing",
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -407,6 +432,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-perf') {
+      code_security_configuration: "kuksa-base-sec",
       description: "KUKSA performance tests",
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -421,6 +447,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-java-sdk') {
+      code_security_configuration: "kuksa-base-sec",
       description: "The Java SDK for Eclipse KUKSA",
       allow_merge_commit: true,
       allow_rebase_merge: false,
@@ -436,6 +463,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-proto') {
+      code_security_configuration: "kuksa-base-sec",
       description: "Protobuf definitions for Eclipse KUKSA",
       allow_merge_commit: true,
       allow_rebase_merge: false,
@@ -451,6 +479,7 @@ orgs.newOrg('automotive.kuksa', 'eclipse-kuksa') {
       ],
     },
     orgs.newRepo('kuksa-rust-sdk') {
+      code_security_configuration: "kuksa-base-sec",
       description: "The Rust SDK for the Eclipse KUKSA",
       allow_merge_commit: true,
       allow_update_branch: false,
